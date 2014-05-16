@@ -5,17 +5,18 @@ wdi_project_1
 2. Model associations on sketchbook.
 3. Wireframes include 4 tables: Users, Venues, Favorites (join table) and Notes.
 4. Resources:
+                Trello project management: https://trello.com
                 Foursquare API docs: https://developer.foursquare.com/docs/venues/explore
                 JsonView: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
                 ActiveRecord Associations: http://guides.rubyonrails.org/association_basics.html
 
 5. Milestones:
-                Friday 05/16:
-                Saturday 05/17:
-                Sunday 05/18:
+                Friday 05/16: Data model complete. DB/tables/MVC files complete.
+                Saturday 05/17: Logic work, models and controllers
+                Sunday 05/18: Logic work complete
                 Monday 05/19:
-                Tuesday 05/20:
-                Wednesday 05/21:
+                Tuesday 05/20: View files and CSS styling.
+                Wednesday 05/21: Heroku upload, server upload.
 
 6. Planning board. Trello 'wdi_project_1'
 
