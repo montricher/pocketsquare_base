@@ -1,11 +1,29 @@
 Rails.application.routes.draw do
   # root route
-  root to: "home#index"
+  # root to: "home#index"
+
+  root :to => "home#index"
 
   # display all
-  get '/index' => "search#index"
 
-  get '/venues' => "venues#index"
+  get '/index' => "users#index"
+
+  get "/sign_in" => "authentication#sign_in"
+
+  post "sign_in" => "authentication#login"
+
+  get "/signed_out" => "authentication#signed_out"
+
+  get "/change_password" => "authentication#change_password"
+
+  get "/forgot_password" => "authentication#forgot_password"
+
+  get "/new_user" => "authentication#new_user"
+
+  get "/password_sent" => "authentication#password_sent"
+
+
+
 
 
 
