@@ -20,6 +20,9 @@ wdi_project_1
 
 6. Planning board. Trello 'wdi_project_1'
 
+7. User stories:
+
+
 
 Scope. What are you planning to build? What features will it have? What do you think you can reasonably implement in the time period?
 Object Models. Draw out the model associations for your project. Pen and paper is very easy and you can take a picture to save it, or use software like PowerPoint, Keynote, Gliffy (online), and Omnigraffle ($$).
