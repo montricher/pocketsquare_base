@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
         # set their return value to @current_user
         @current_user = User.authenticated?(email, password)
 
-        # or redirect on failure???
+        # or redirect on failure?
         # unless @current_user
         #   redirect_to root_path
         # end

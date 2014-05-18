@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+
   end
 
   def new
@@ -8,8 +9,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_hash = params[:user]
-    if user_hash[:password] == user_hash[:password_confirm]
+    user_hash = params[:user_name]
+    # if user_hash[:password] == user_hash[:password_confirm]
       user = User.new
       user.user_name = user_hash[:name]
       user.user_birthdate = user_hash[:birthdate]
@@ -27,8 +28,8 @@ class UsersController < ApplicationController
       render text: "Email is already in use"
       end
     else
-    render text: "Password confirmation did not match"
-    end
-    # render json: params
+    render text: "Password/password confirmation did not match"
+    # end
+
   end
 end
