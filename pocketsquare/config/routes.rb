@@ -6,21 +6,18 @@ Rails.application.routes.draw do
 
   # users...
 
-  # get ALL users
   get "/users" => "users#index"
 
-  get "/users/:id" => "users#create"
+  get "/users/new" => "users#new"
 
-  # show NEW user form
-  get "/user/new" => "users#create"
-
-  # process user CREATE action from form
   post "/users" => "users#create"
 
-  # show LOGIN form
   get "/user/login" => "users#login"
 
-  # process login form
   post "/user/login" => "users#process_login"
+
+  # venues...
+
+  get "/venues" => "venues#index"
 
 end

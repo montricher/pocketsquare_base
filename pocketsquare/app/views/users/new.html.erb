@@ -1,9 +1,17 @@
 <%= form_for @user do |f| %>
+
   <p><%= f.text_field :user_name, { placeholder: "Name" } %></p>
+
   <p><%= f.text_field :user_birthdate, { placeholder: "Birthday" } %></p>
+
   <p><%= f.text_field :user_email, { placeholder: "Email" } %></p>
+
   <p><%= f.text_field :user_zip, { placeholder: "Zip Code" } %></p>
+
   <p><%= f.password_field :password, { placeholder: "Enter password" } %></p>
+
   <p><%= f.password_field :password_confirm, { placeholder: "Re-enter password" } %></p>
+
   <p><%= f.submit %></p>
+
 <% end %>

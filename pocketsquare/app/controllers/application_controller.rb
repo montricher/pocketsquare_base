@@ -7,17 +7,12 @@ class ApplicationController < ActionController::Base
     # this will be called from controller before any action
     unless @current_user
       # grabs email, password
-      authenticate_or_request_with_http_basic do |email, password|
+      authenticate_or_request_with_http_basic do |user_email, password|
         # feeds the values through our self.authenticated? class method
 
         # set their return value to @current_user
-        @current_user = User.authenticated?(email, password)
+        @current_user = User.authenticated?(user_email, password)
 
-        # or redirect on failure?
-        # unless @current_user
-        #   redirect_to root_path
-        # end
-        # resume letting the user into the site
       end
     else
       @current_user
@@ -31,10 +26,5 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user
   end
-
-  # # example of a helper
-  # def make_link_tag(url)
-  #   "<a href='#{url}'>link</a>"
-  # end
 
 end

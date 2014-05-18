@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   # Allows to call method .favorites on any user
   has_many :favorites
 
+  before_validation :downcase_email
+
   validates :user_email, uniqueness: true
 
   def password = password_input
@@ -20,23 +22,25 @@ class User < ActiveRecord::Base
     Password.new(self.hashed_password)
   end
 
-  # checking password
+  # checking password...
   def check_password(password_input)
     # does password entered matches the db?
     password_input == self.password
   end
 
-  def self.authenticated?(email_input, password_input)
-    user = User.find_by_email(email_input)
+  def self.authenticated?(user_email_input, password_input)
+    user = User.find_by_email(user_email_input)
       if user && user.password == password_input
-        puts "Authenticated!"
+        puts "Authenticated"
         return user
       else
-        puts "Did not authenticate!"
+        puts "Could not authenticate"
         return nil
       end
     puts "Did not find email!"
     return nil
   end
-
+  def downcase_email
+    self.email = email.downcase
+  end
 end
