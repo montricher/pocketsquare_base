@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def self.authenticated?(user_email_input, password_input)
-    user = User.find_by_email(user_email_input)
+    user = User.find_by_user_email(user_email_input)
       if user && user.password == password_input
         puts "Authenticated"
         return user
@@ -40,7 +40,8 @@ class User < ActiveRecord::Base
     puts "Did not find email!"
     return nil
   end
+  #emails to lowercase format before send them to table
   def downcase_email
-    self.email = email.downcase
+    self.user_email = user_email.downcase
   end
 end
