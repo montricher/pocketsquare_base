@@ -47,5 +47,7 @@ class UsersController < ApplicationController
       else
         render text: "Authentication failed. Incorrect email or password."
       end
+
   end
+
 end

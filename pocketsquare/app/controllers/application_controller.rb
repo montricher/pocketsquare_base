@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
   # something here
   helper_method :current_user
 
