@@ -1,0 +1,13 @@
+<h2><%= @venue.name %></h2>
+<ul>
+  <p><li><%= @venue.venue_phone %></li></p>
+  <p><li><%= @venue.venue_address %></li></p>
+  <p><li><%= @venue.venue_zip %></li></p>
+  <p><li><%= @venue.venue_twitter %></li></p>
+</ul>
+
+<!-- print email and id of user logged in -->
+<%= current_user.user_email %> <%= current_user.id %>
+
+<!-- provide a button to go back -->
+<%= link_to "Return", spots_path %>

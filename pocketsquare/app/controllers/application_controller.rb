@@ -3,29 +3,22 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def authenticate_with_basic_auth
-    # this will be called from controller before any action
-    unless @current_user
-      # grabs email, password
-      authenticate_or_request_with_http_basic do |user_email, password|
-        # feeds the values through our self.authenticated? class method
-
-        # set their return value to @current_user
-        @current_user = User.authenticated?(user_email, password)
-
-      end
+# information restriction
+  def require_login
+    if current_user
+      current_user
     else
-      @current_user
+      redirect_to root_path
     end
+
   end
-
-
-  # something here
+  # helper required
   helper_method :current_user
 
-  # public getter for a normally private instance variable
+  private
+  # a normally private instance variable
   def current_user
-    @current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
 end

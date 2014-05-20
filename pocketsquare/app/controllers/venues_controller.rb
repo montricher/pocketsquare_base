@@ -3,8 +3,13 @@ class VenuesController < ApplicationController
   before_action :authenticate_with_basic_auth
 
   def index
-    @names = Venue.explore
-    @user = current_user
+    @venues = Venue.all
+
   end
 
+  def show
+
+    @spot = Spot.find(params[:id])
+
+  end
 end

@@ -1,17 +1,46 @@
+<h3>Sign up for an account</h3>
+
+<!-- form errors and validation -->
 <%= form_for @user do |f| %>
 
-  <p><%= f.text_field :user_name, { placeholder: "Name" } %></p>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form error!</h2>
+      <ul>
+      <% for message in @user.errors.full_messages %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <p><%= f.text_field :user_birthdate, { placeholder: "Birthday" } %></p>
+  <p>
+    <%= f.label :Name %><br />
+    <%= f.text_field :user_name %>
+  </p>
+  <p>
+    <%= f.label :Email %><br />
+    <%= f.text_field :user_email %>
+  </p>
+  <p>
+    <%= f.label :Birthday %><br />
+    <%= f.date_field :birthdate %>
+  </p>
 
-  <p><%= f.text_field :user_email, { placeholder: "Email" } %></p>
+  <p>
+    <%= f.label :Zip_Code %><br />
+    <%= f.text_field :user_zip %>
+  </p>
+  <p>
+    <%= f.label :Password %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :Password_Confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
 
-  <p><%= f.text_field :user_zip, { placeholder: "Zip Code" } %></p>
-
-  <p><%= f.password_field :password, { placeholder: "Enter password" } %></p>
-
-  <p><%= f.password_field :password_confirm, { placeholder: "Re-enter password" } %></p>
-
-  <p><%= f.submit %></p>
-
+<!-- submit button for db access -->
+  <p class="button"><%= f.submit %></p>
 <% end %>
+

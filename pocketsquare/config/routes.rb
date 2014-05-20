@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root :to => "home#index"
 
-  # users...
+  # users routes
 
   get "/users" => "users#index"
 
@@ -16,8 +16,18 @@ Rails.application.routes.draw do
 
   post "/user/login" => "users#process_login"
 
-  # venues...
+  # venues routes "controller#action"
 
   get "/venues" => "venues#index"
+
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "users#new", :as => "sign_up"
+
+  # resources implementation
+  resources :users
+  resources :sessions
+
+  resources :venues
 
 end
