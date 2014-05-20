@@ -16,9 +16,9 @@ Rails.application.routes.draw do
 
   post "/user/login" => "users#process_login"
 
-  # venues routes "controller#action"
 
-  get "/venues" => "venues#index"
+
+  # venues routes "controller#action"
 
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
@@ -28,6 +28,11 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
-  resources :venues
+  resources :venues do
+    collection do
+      get "search"
+    end
+  end
+  #get "venues/search" => "venues#search"
 
 end

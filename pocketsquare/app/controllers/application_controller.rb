@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
     else
       redirect_to root_path
     end
-
   end
   # helper required
   helper_method :current_user

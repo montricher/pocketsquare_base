@@ -1,0 +1,11 @@
+<h3>Favorite Venues</h3>
+
+<ul>
+  <% @venues.each do |venue| %>
+  <!-- link_to venue.venue_name, "venue/- - -" -->
+    <p><ul>Name: <%= venue.name %></ul></p>
+    <p><ul>Address: <%= venue.venue_address %></ul></p>
+    <p><ul>Twitter: <%= venue.venue_twitter %></ul></p>
+  <% end %>
+
+</ul>

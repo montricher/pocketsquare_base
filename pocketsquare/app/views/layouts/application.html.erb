@@ -22,11 +22,13 @@
   <h1>PocketSquare</h1>
   <h3>Find your next favorite spot</h3>
 
+  <%= link_to "New Search", "/venues" %> | <%= link_to "PocketFavorites", "/favorites" %> | <%= link_to "SpyMode", "/spy" %>
+
   <div id="user_nav">
     <% if current_user %>
 
-      Now logged in as <%= current_user.user_email %>.
-      <%= link_to "Log out", log_out_path %>
+      <p>Now logged in as <%= current_user.user_email %> | <%= link_to "Log out", log_out_path %></p>
+      <p><%= link_to "Begin your search", "/venues" %></p>
 
     <% else %>
 
