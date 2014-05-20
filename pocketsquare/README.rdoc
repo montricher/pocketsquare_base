@@ -1,13 +1,7 @@
 * Git version 1.9.2 - Ruby 1.9.3 - PSql 9.3.4 - Rails 4.1.0 - heroku-toolbelt 3.7.3
-
 * System dependencies
-
 * Configuration
-
 * Database creation: 'Postgresql', 2 tables, 1 join table
-
 * Database initialization
-
-* Services: Foursquare API
-
-* Deployment instructions: Heroku upload - http://pocketsquare.herokuapp.com
+* Services: Foursquare API - https://developer.foursquare.com/
+* Deployment: Heroku - http://pocketsquare.herokuapp.com
