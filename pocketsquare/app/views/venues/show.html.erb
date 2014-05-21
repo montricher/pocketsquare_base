@@ -1,4 +1,7 @@
-<h2><%= @venue.name %></h2>
+
+
+
+<h3><%= @venue.name %></h3>
 <ul>
   <p><li><%= @venue.venue_phone %></li></p>
   <p><li><%= @venue.venue_address %></li></p>
@@ -7,9 +10,9 @@
 </ul>
 
 <!-- print email and id of user logged in -->
-<%= current_user.user_email %> <%= current_user.id %>
+<!-- <%= current_user.user_email %> <%= current_user.id %> -->
 
 <!-- provide a button to go back -->
-<%= link_to "Return", spots_path %>
+<%= link_to "Go back", venues_path %>
 
 

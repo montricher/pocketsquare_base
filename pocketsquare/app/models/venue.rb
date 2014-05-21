@@ -4,6 +4,12 @@ class Venue < ActiveRecord::Base
   # Allows to call method .favorites on any user
   has_many :favorites
 
+  # where do these data validations should go in order to work? models or controllers?
+  validates_presence_of :keyword, :zip_code
+  validates_numericality_of   :zip_code
+                              :only_integer => true
+                              :allow_nil => false
+
   include FoursquareHelper
 
   # explores for food near GA West and returns a list of the names of the food venues
@@ -14,5 +20,7 @@ class Venue < ActiveRecord::Base
       venue["venue"]["name"]
     end
   end
+
+
 
 end
